@@ -1,0 +1,5 @@
+<%= form_tag(equations_path, :method => "get") do %>
+  <%= label_tag(:equation, "Equation") %>
+  <%= text_field_tag(:equation) %>
+  <%= submit_tag("Solve") %>
+<% end %>
