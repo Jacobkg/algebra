@@ -23,4 +23,11 @@ describe EquationStepper do
     stepper.result.should == Equation.new("x = 4")
   end
 
+  it "adds before dividing in multi step solution" do
+    equation = Equation.new("2x - 6 = 12")
+    stepper = EquationStepper.for(equation)
+    stepper.step.should == Equation.new("+ 6 = + 6")
+    stepper.result.should == Equation.new("2x = 18")
+  end
+
 end
